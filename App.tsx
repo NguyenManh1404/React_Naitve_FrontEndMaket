@@ -1,16 +1,13 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React, {useEffect} from 'react';
 import SplashScreen from 'react-native-splash-screen';
+import LoggedNavigation from './src/navigation/LoggedNavigation/LoggedNavigation';
 const App = () => {
   useEffect(() => {
     SplashScreen.hide();
   });
 
-  return (
-    <View>
-      <Text>App</Text>
-    </View>
-  );
+  return <LoggedNavigation />;
 };
 
 export default App;
