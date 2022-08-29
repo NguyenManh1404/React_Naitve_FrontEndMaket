@@ -1,11 +1,12 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text} from 'react-native';
 import React from 'react';
+import WView from '../../components/core/WView';
 
 const Video = () => {
   return (
-    <View>
+    <WView>
       <Text>Video</Text>
-    </View>
+    </WView>
   );
 };
 
