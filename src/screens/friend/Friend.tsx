@@ -1,12 +1,11 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import WView from '../../components/core/WView';
 
 const Friend = () => {
   return (
-    <WView>
+    <View>
       <Text>Friend</Text>
-    </WView>
+    </View>
   );
 };
 

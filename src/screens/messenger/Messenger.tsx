@@ -1,12 +1,11 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import WView from '../../components/core/WView';
 
 const Messenger = () => {
   return (
-    <WView>
+    <View>
       <Text>Messenger</Text>
-    </WView>
+    </View>
   );
 };
 
