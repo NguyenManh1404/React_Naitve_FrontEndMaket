@@ -1,27 +1,37 @@
-import {Image, StyleSheet, Text, View} from 'react-native';
-import React from 'react';
+import {Image, StyleSheet, Text} from 'react-native';
+import React, {useState} from 'react';
+
 import {MenuTapList} from '../MenuTapList';
-import {NavigationContainer} from '@react-navigation/native';
+import {
+  NavigationContainer,
+  useNavigationContainerRef,
+} from '@react-navigation/native';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
+import WView from '../../components/core/WView';
+import WText from '../../components/core/WText';
 
 const Tab = createMaterialTopTabNavigator();
 
 const LoggedNavigation = () => {
+  const navigationRef = useNavigationContainerRef();
+  const [currentRouteName, setCurrentRouteName] = useState<string>('Home');
   return (
-    <NavigationContainer>
+    <NavigationContainer
+      ref={navigationRef}
+      onStateChange={async () => {
+        const currentRouteNameState = navigationRef.getCurrentRoute().name;
+        setCurrentRouteName(currentRouteNameState);
+      }}>
+      {currentRouteName === 'Home' ? (
+        <WView mHoz={20} color={'white'}>
+          <WText style={styles.logoText} color={'#0d8af0'}>
+            fakebook
+          </WText>
+          <WView></WView>
+        </WView>
+      ) : null}
+
       <Tab.Navigator>
-        {/* <Tab.Screen
-          name="Homes"
-          component={Home}
-          options={{
-            tabBarContentContainerStyle: {
-              height: 100,
-              // backgroundColor: 'red',
-              marginTop: 200,
-            },
-            tabBarShowLabel: false,
-    
-          }}></Tab.Screen> */}
         {MenuTapList.map((e, index) => {
           const {name, component, title, iconActive, iconUnActive} = e;
           return (
@@ -62,4 +72,10 @@ const LoggedNavigation = () => {
 
 export default LoggedNavigation;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  logoText: {
+    fontWeight: 'bold',
+    fontSize: 26,
+    fontFamily: 'Muli-SemiBold',
+  },
+});
