@@ -1,12 +1,11 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import WView from '../../components/core/WView';
 
 const Notification = () => {
   return (
-    <WView>
+    <View>
       <Text>Notification</Text>
-    </WView>
+    </View>
   );
 };
 
