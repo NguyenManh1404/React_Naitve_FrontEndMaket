@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+<!-- Add mapView -->
+    <uses-permission android:name="android.permission.INTERNET" /> 
+<!-- Add mapView -->
 
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
 
@@ -8,6 +11,11 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="28"
         tools:ignore="GoogleAppIndexingWarning">
+        <!-- Add mapView -->
+         <meta-data
+    android:name="com.google.android.geo.API_KEY"
+    android:value="AIzaSyDswlxkWl-Wxyitg4T1-WXytnofuUUMNhM" />
+    <!-- Add mapView -->
         <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" android:exported="false" />
     </application>
 </manifest>
